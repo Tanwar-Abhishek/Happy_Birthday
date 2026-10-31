@@ -1,0 +1,265 @@
+/* Custom styles for our Anime Theme */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F0F8FF; /* Alice Blue - a very light sky blue */
+    color: #2c3e50; /* Dark Navy/Slate */
+}
+.font-anime {
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+.text-sakura {
+    color: #FFB7C5; /* Cherry Blossom Pink */
+}
+.bg-navy {
+    background-color: #2c3e50;
+}
+/* Style for the falling petals canvas */
+#sakura-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none; /* Allows clicks to go through the canvas */
+}
+/* For hiding the scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Custom styles for our Anime Theme */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F0F8FF; /* Alice Blue - a very light sky blue */
+    color: #2c3e50; /* Dark Navy/Slate */
+}
+.font-anime {
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+.text-sakura {
+    color: #FFB7C5; /* Cherry Blossom Pink */
+}
+.bg-navy {
+    background-color: #2c3e50;
+}
+/* Style for the falling petals canvas */
+#sakura-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none; /* Allows clicks to go through the canvas */
+}
+/* For hiding the scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* ==============================
+   FINALE SURPRISE BUTTON
+================================ */
+
+.surprise-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+
+    padding: 1rem 1.8rem;
+
+    border: 1px solid rgba(255, 183, 197, 0.8);
+    border-radius: 999px;
+
+    color: #2c3e50;
+
+    background: linear-gradient(
+        135deg,
+        #ffd6e0,
+        #fff0f5 55%,
+        #dff4ff
+    );
+
+    box-shadow: 0 10px 28px rgba(44, 62, 80, 0.16);
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 220ms ease,
+        box-shadow 220ms ease,
+        filter 220ms ease;
+
+    z-index: 6;
+}
+
+.surprise-button:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 16px 34px rgba(44, 62, 80, 0.22);
+
+    filter: saturate(1.08);
+}
+
+.surprise-button:focus-visible {
+    outline: 3px solid #2c3e50;
+    outline-offset: 4px;
+}
+
+.surprise-button__sparkle {
+    color: #d45d82;
+    font-size: 1.25rem;
+}
+
+.surprise-button__arrow {
+    transition: transform 220ms ease;
+}
+
+.surprise-button[aria-expanded="true"]
+.surprise-button__arrow {
+    transform: rotate(90deg);
+}
+
+
+/* ==============================
+   SURPRISE REVEAL SECTION
+================================ */
+
+.surprise-reveal {
+    max-width: 58rem;
+    margin: 2.5rem auto 0;
+
+    animation: surprise-appear
+        650ms cubic-bezier(.2, .8, .2, 1) both;
+}
+
+.surprise-reveal[hidden] {
+    display: none;
+}
+
+
+/* ==============================
+   SURPRISE CARD
+================================ */
+
+.surprise-card {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 183, 197, 0.55);
+    border-radius: 1.25rem;
+
+    background: #fff;
+
+    box-shadow: 0 20px 55px rgba(44, 62, 80, 0.16);
+
+    text-align: left;
+}
+
+.surprise-card__image-wrap {
+    min-height: 19rem;
+    background: #dff4ff;
+}
+
+.surprise-card__image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    min-height: 19rem;
+
+    object-fit: cover;
+}
+
+.surprise-card__content {
+    align-self: center;
+
+    padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.surprise-card__eyebrow {
+    margin-bottom: 0.8rem;
+
+    color: #d45d82;
+
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+}
+
+
+/* ==============================
+   REVEAL ANIMATION
+================================ */
+
+@keyframes surprise-appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(22px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* ==============================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 700px) {
+
+    .surprise-card {
+        grid-template-columns: 1fr;
+    }
+
+    .surprise-card__image-wrap,
+    .surprise-card__image {
+        min-height: 15rem;
+        max-height: 20rem;
+    }
+
+    .surprise-button {
+        padding: 0.9rem 1.35rem;
+    }
+
+}
+
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .surprise-button,
+    .surprise-button__arrow {
+        transition: none;
+    }
+
+    .surprise-reveal {
+        animation: none;
+    }
+
+}
